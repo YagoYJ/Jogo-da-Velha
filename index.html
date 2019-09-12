@@ -6,22 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <title>Jogo da Velha - YJ</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="casa" id="casa1"></div>
-        <div class="casa" id="casa2"></div>
-        <div class="casa" id="casa3"></div>
-        <div class="casa" id="casa4"></div>
-        <div class="casa" id="casa5"></div>
-        <div class="casa" id="casa6"></div>
-        <div class="casa" id="casa7"></div>
-        <div class="casa" id="casa8"></div>
-        <div class="casa" id="casa9"></div>
+    <div class="players">
+        <form>
+            <label for="inputPlayer1">Player 1 ( X ):</label><br>
+            <input type="text" class="campoInput" id="inputPlayer1" name="inputPlayer1" max="30" placeholder="Nome do primeiro jogador" required>
+            <label for="inputPlayer2">Player 2 ( O ):</label><br>
+            <input type="text" class="campoInput" id="inputPlayer2" name="inputPlayer2" max="30" placeholder="Nome do segundo jogador" required>
+            <button type="submit" onsubmit="validar()">Começar</button>
+        </form>
     </div>
+    <div class="container" id="container">
+        <div class="casa" id="casa0">casa0</div>
+        <div class="casa" id="casa1">casa1</div>
+        <div class="casa" id="casa2">casa2</div>
+        <div class="casa" id="casa3">casa3</div>
+        <div class="casa" id="casa4">casa4</div>
+        <div class="casa" id="casa5">casa5</div>
+        <div class="casa" id="casa6">casa6</div>
+        <div class="casa" id="casa7">casa7</div>
+        <div class="casa" id="casa8">casa8</div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

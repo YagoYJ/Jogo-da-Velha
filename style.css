@@ -3,17 +3,71 @@
     padding: 0;
 }
 
+.players {
+    width: 90%;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 8px;
+    margin: 50px auto;
+    padding: 2%;
+}
+
+.players form label {
+    font-size: 15pt;
+    float: left;
+    margin-left: 30px;
+}
+
+.players form .campoInput,
+.players form button {
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 2% auto;
+    padding: 1%;
+}
+
+.players form .campoInput {
+    width: 90%;
+    font-size: 18pt;
+    outline: none;
+}
+
+.players form button {
+    width: 95%;
+    font-size: 12pt;
+}
+
+.players form button:hover {
+    background: #218838;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: .4s;
+}
+
 .container {
-    width: 600px;
-    height: 600px;
-    display: flex;
-    margin: 20px auto;
+    width: 500px;
+    height: 500px;
     background: #cecece;
     border: 1px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
 }
 
 .container .casa {
-    width: 190px;
-    height: 190px;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 150px;
     border: 1px solid #069;
+    margin: .5%;
+    flex: 1 0 30%;
 }
+
+.container .casa:hover {
+    background: #b8b2b2;
+    cursor: pointer;
+}
+
+form
