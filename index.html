@@ -10,25 +10,37 @@
 </head>
 
 <body>
-    <div class="players">
-        <form>
+    <div class="players" id="players">
+        <form action="#" method="post">
             <label for="inputPlayer1">Player 1 ( X ):</label><br>
             <input type="text" class="campoInput" id="inputPlayer1" name="inputPlayer1" max="30" placeholder="Nome do primeiro jogador" required>
             <label for="inputPlayer2">Player 2 ( O ):</label><br>
             <input type="text" class="campoInput" id="inputPlayer2" name="inputPlayer2" max="30" placeholder="Nome do segundo jogador" required>
-            <button type="submit" onsubmit="validar()">Começar</button>
+            <button type="submit" id="btnValidar">Começar</button>
         </form>
     </div>
-    <div class="container" id="container">
-        <div class="casa" id="casa0">casa0</div>
-        <div class="casa" id="casa1">casa1</div>
-        <div class="casa" id="casa2">casa2</div>
-        <div class="casa" id="casa3">casa3</div>
-        <div class="casa" id="casa4">casa4</div>
-        <div class="casa" id="casa5">casa5</div>
-        <div class="casa" id="casa6">casa6</div>
-        <div class="casa" id="casa7">casa7</div>
-        <div class="casa" id="casa8">casa8</div>
+    <div class="jogo" id="jogo">
+        <div class="informacoes">
+            <p class="pPlayer vezAtual" id="pPlayer1">Player 1:</p>
+            <hr>
+            <p class="pPlayer" id="pPlayer2">Player 2:</p>
+        </div>
+
+        <div class="container" id="container">
+            <div class="casa" id="casa0">-</div>
+            <div class="casa" id="casa1">-</div>
+            <div class="casa" id="casa2">-</div>
+            <div class="casa" id="casa3">-</div>
+            <div class="casa" id="casa4">-</div>
+            <div class="casa" id="casa5">-</div>
+            <div class="casa" id="casa6">-</div>
+            <div class="casa" id="casa7">-</div>
+            <div class="casa" id="casa8">-</div>
+        </div>
+        <div class="resultado">
+            <h1 id="textoVencedor"></h1>
+            <a href="index.html">Jogar novamente</a>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
