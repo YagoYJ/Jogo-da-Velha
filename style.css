@@ -81,19 +81,20 @@
     height: 500px;
     background: #cecece;
     border: 1px solid #000;
-    display: flex;
-    flex-wrap: wrap;
     margin: 20px auto;
     position: relative;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-areas: "c1 c2 c3" "c4 c5 c6" "c7 c8 c9";
+    justify-content: space-between;
+    align-content: space-between;
 }
 
 .jogo .container .casa {
+    position: relative;
     font-size: 30pt;
-    text-align: center;
-    line-height: 150px;
     border: 1px solid #069;
-    margin: .5%;
-    flex: 1 0 30%;
 }
 
 .jogo .container .casa:hover {
@@ -101,10 +102,53 @@
     cursor: pointer;
 }
 
+.jogo .container .casa span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .vezAtual {
     font-size: 25pt;
     font-weight: bold;
     transition: .4s;
+}
+
+#casa0 {
+    grid-area: c1;
+}
+
+#casa1 {
+    grid-area: c2;
+}
+
+#casa2 {
+    grid-area: c3;
+}
+
+#casa3 {
+    grid-area: c4;
+}
+
+#casa4 {
+    grid-area: c5;
+}
+
+#casa5 {
+    grid-area: c6;
+}
+
+#casa6 {
+    grid-area: c7;
+}
+
+#casa7 {
+    grid-area: c8;
+}
+
+#casa8 {
+    grid-area: c9;
 }
 
 
@@ -151,4 +195,14 @@
 
 .finalizado {
     opacity: .2;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 500px) {
+    .jogo .container {
+        width: 300px;
+        height: 300px;
+    }
 }
