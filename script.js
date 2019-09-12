@@ -52,87 +52,111 @@ function marcar(e) {
     }
 }
 
+// Mudar estilos quando o jogo acabar:
+var resultado = document.getElementById("resultado");
+var informacoes = document.getElementById("informacoes");
+var container = document.getElementById("container");
+
+function mudarEstilo() {
+    resultado.style.display = "block";
+    informacoes.classList.add("finalizado");
+    container.classList.add("finalizado");
+}
 
 // Verificar o Vencedor:
-var vencedor = "Nenhum";
+var vencedor;
+var titulo = document.getElementById("textoVencedor");
 
 function verificarVencedor() {
-    // Horizontal:
+    // Vertical:
     if (casas[0].innerText !== "-" && casas[0].innerText == casas[3].innerText && casas[0].innerText == casas[6].innerText) {
         if (casas[0].innerText == "X") {
             vencedor = player1;
-            console.log(vencedor + " venceu!");
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         } else {
             vencedor = player2;
-            console.log(vencedor + " venceu!");
-
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         }
     } else if (casas[1].innerText !== "-" && casas[1].innerText == casas[4].innerText && casas[1].innerText == casas[7].innerText) {
         if (casas[1].innerText == "X") {
             vencedor = player1;
-            console.log(vencedor + " venceu!");
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         } else {
             vencedor = player2;
-            console.log(vencedor + " venceu!");
-
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         }
     } else if (casas[2].innerText !== "-" && casas[2].innerText == casas[5].innerText && casas[2].innerText == casas[8].innerText) {
         if (casas[2].innerText == "X") {
             vencedor = player1;
-            console.log(vencedor + " venceu!");
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         } else {
             vencedor = player2;
-            console.log(vencedor + " venceu!");
-
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         }
     }
-    // Vertical:
+    // Horizontal:
     else if (casas[0].innerText !== "-" && casas[0].innerText == casas[1].innerText && casas[0].innerText == casas[2].innerText) {
         if (casas[0].innerText == "X") {
             vencedor = player1;
-            console.log(vencedor + " venceu!");
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         } else {
             vencedor = player2;
-            console.log(vencedor + " venceu!");
-
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         }
     } else if (casas[3].innerText !== "-" && casas[3].innerText == casas[4].innerText && casas[3].innerText == casas[5].innerText) {
         if (casas[3].innerText == "X") {
             vencedor = player1;
-            console.log(vencedor + " venceu!");
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         } else {
             vencedor = player2;
-            console.log(vencedor + " venceu!");
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         }
     } else if (casas[6].innerText !== "-" && casas[6].innerText == casas[7].innerText && casas[6].innerText == casas[8].innerText) {
         if (casas[6].innerText == "X") {
             vencedor = player1;
-            console.log(vencedor + " venceu!");
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         } else {
             vencedor = player2;
-            console.log(vencedor + " venceu!");
-
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         }
     }
     // Diagonal:
     else if (casas[0].innerText !== "-" && casas[0].innerText == casas[4].innerText && casas[0].innerText == casas[8].innerText) {
         if (casas[0].innerText == "X") {
             vencedor = player1;
-            console.log(vencedor + " venceu!");
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         } else {
             vencedor = player2;
-            console.log(vencedor + " venceu!");
-
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         }
     } else if (casas[2].innerText !== "-" && casas[2].innerText == casas[4].innerText && casas[2].innerText == casas[6].innerText) {
         if (casas[2].innerText == "X") {
             vencedor = player1;
-            console.log(vencedor + " venceu!");
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         } else {
             vencedor = player2;
-            console.log(vencedor + " venceu!");
-
+            textoVencedor.innerText = vencedor + " venceu!";
+            mudarEstilo();
         }
+    } else if (casas[0].innerText != "-" && casas[1].innerText != "-" && casas[2].innerText != "-" && casas[3].innerText != "-" && casas[4].innerText != "-" && casas[5].innerText != "-" && casas[6].innerText != "-" && casas[7].innerText != "-" && casas[8].innerText != "-") {
+        vencedor = "Deu empate";
+        textoVencedor.innerText = vencedor;
+        mudarEstilo();
     }
 }
 // Aplicando os eventos de click:

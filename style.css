@@ -23,7 +23,6 @@
 
 .players form .campoInput,
 .players form button {
-    height: 35px;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin: 2% auto;
@@ -32,6 +31,7 @@
 
 .players form .campoInput {
     width: 90%;
+    height: 35px;
     font-size: 18pt;
     outline: none;
 }
@@ -53,7 +53,7 @@
 /* CONTEÚDO DO JOGO */
 
 .jogo {
-    /*display: none;*/
+    display: none;
 }
 
 
@@ -61,11 +61,12 @@
 
 .jogo .informacoes {
     width: 90%;
-    font-size: 20pt;
+    font-size: 17pt;
     color: #fff;
     background-color: #006699;
-    margin: 20px auto;
+    margin: 0 auto 20px auto;
     padding: 10px;
+    position: relative;
 }
 
 .jogo .informacoes p {
@@ -83,6 +84,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: 20px auto;
+    position: relative;
 }
 
 .jogo .container .casa {
@@ -100,7 +102,53 @@
 }
 
 .vezAtual {
-    font-size: 32pt;
+    font-size: 25pt;
     font-weight: bold;
     transition: .4s;
+}
+
+
+/* Mensagem vencedor */
+
+.jogo .resultado {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .1);
+    float: left;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.jogo .resultado h1 {
+    font-size: 30pt;
+    margin: 170px auto 20px auto;
+}
+
+.jogo .resultado h2 {
+    display: table;
+    margin: 0 auto;
+}
+
+.jogo .resultado a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20pt;
+    background: #069;
+    border-radius: 8px;
+    margin: 30px auto;
+    padding: 2%;
+    display: table;
+    opacity: .8;
+}
+
+.jogo .resultado a:hover {
+    opacity: 1;
+    transition: .4s;
+}
+
+.finalizado {
+    opacity: .2;
 }
