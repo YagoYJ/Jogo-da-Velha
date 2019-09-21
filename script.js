@@ -4,7 +4,7 @@ var player1;
 var player2;
 var pPlayer1 = document.getElementById("pPlayer1");
 var pPlayer2 = document.getElementById("pPlayer2");
-var jogo = document.getElementById("jogo");
+var gameView = document.getElementById("gameView");
 var players = document.getElementById("players");
 
 form.addEventListener("submit", function(event) {
@@ -14,194 +14,202 @@ form.addEventListener("submit", function(event) {
     pPlayer1.innerText += " " + player1;
     pPlayer2.innerText += " " + player2;
     players.style.display = "none";
-    jogo.style.display = "block";
+    gameView.style.display = "grid";
 });
 
 // Lógica do jogo:
-// Criando o Array das casas:
+// Criando o Array das square:
 
-var casas = {};
+var square = {};
 for (var x = 0; x < 9; x++) {
-    casas[x] = document.getElementById("casa" + x);
+    square[x] = document.getElementById("square" + x);
+
+}
+var squareText = {};
+for (var x = 0; x < 9; x++) {
+    squareText[x] = document.getElementById("squareText" + x);
+    squareText[x].innerText = "";
+
 }
 
 // Adicionando evento de clique:
-var vez = 1; // Vez de qual jogador
+var currentTime = 1; // Vez atual do jogador
 
 // Mostra quem deverá jogar agora:
-function mostrarVez() {
-    if (vez == 1) {
-        pPlayer1.classList.add("vezAtual");
-        pPlayer2.classList.remove("vezAtual");
+function showCurrentTime() {
+    if (currentTime == 1) {
+        pPlayer1.classList.add("currentTime");
+        pPlayer2.classList.remove("currentTime");
     } else {
-        pPlayer2.classList.add("vezAtual");
-        pPlayer1.classList.remove("vezAtual");
+        pPlayer2.classList.add("currentTime");
+        pPlayer1.classList.remove("currentTime");
     }
 }
 
 // Função para colocar o simbolo:
-function marcar(e) {
-    if (e.innerText == "-") {
-        if (vez == 1) {
+function selectSquare(e) {
+
+    if (e.innerText == "") {
+        if (currentTime == 1) {
             e.innerText = "X";
-            vez = 2;
+            currentTime = 2;
         } else {
             e.innerText = "O";
-            vez = 1;
+            currentTime = 1;
         }
     }
 }
 
 // Mudar estilos quando o jogo acabar:
-var resultado = document.getElementById("resultado");
-var informacoes = document.getElementById("informacoes");
+var result = document.getElementById("result");
+var gameView = document.getElementById("gameView");
 var container = document.getElementById("container");
 
-function mudarEstilo() {
-    resultado.style.display = "block";
-    informacoes.classList.add("finalizado");
+function changeStyle() {
+    result.style.display = "block";
+    gameView.classList.add("finalizado");
     container.classList.add("finalizado");
 }
 
 // Verificar o Vencedor:
-var vencedor;
-var titulo = document.getElementById("textoVencedor");
+var winner;
+var winnerText = document.getElementById("winnerText");
 
-function verificarVencedor() {
+function verifyWinner() {
     // Vertical:
-    if (casas[0].innerText !== "-" && casas[0].innerText == casas[3].innerText && casas[0].innerText == casas[6].innerText) {
-        if (casas[0].innerText == "X") {
-            vencedor = player1;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+    if (square[0].innerText !== "" && square[0].innerText == square[3].innerText && square[0].innerText == square[6].innerText) {
+        if (square[0].innerText == "X") {
+            winner = player1;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         } else {
-            vencedor = player2;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+            winner = player2;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         }
-    } else if (casas[1].innerText !== "-" && casas[1].innerText == casas[4].innerText && casas[1].innerText == casas[7].innerText) {
-        if (casas[1].innerText == "X") {
-            vencedor = player1;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+    } else if (square[1].innerText !== "" && square[1].innerText == square[4].innerText && square[1].innerText == square[7].innerText) {
+        if (square[1].innerText == "X") {
+            winner = player1;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         } else {
-            vencedor = player2;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+            winner = player2;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         }
-    } else if (casas[2].innerText !== "-" && casas[2].innerText == casas[5].innerText && casas[2].innerText == casas[8].innerText) {
-        if (casas[2].innerText == "X") {
-            vencedor = player1;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+    } else if (square[2].innerText !== "" && square[2].innerText == square[5].innerText && square[2].innerText == square[8].innerText) {
+        if (square[2].innerText == "X") {
+            winner = player1;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         } else {
-            vencedor = player2;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+            winner = player2;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         }
     }
     // Horizontal:
-    else if (casas[0].innerText !== "-" && casas[0].innerText == casas[1].innerText && casas[0].innerText == casas[2].innerText) {
-        if (casas[0].innerText == "X") {
-            vencedor = player1;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+    else if (square[0].innerText !== "" && square[0].innerText == square[1].innerText && square[0].innerText == square[2].innerText) {
+        if (square[0].innerText == "X") {
+            winner = player1;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         } else {
-            vencedor = player2;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+            winner = player2;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         }
-    } else if (casas[3].innerText !== "-" && casas[3].innerText == casas[4].innerText && casas[3].innerText == casas[5].innerText) {
-        if (casas[3].innerText == "X") {
-            vencedor = player1;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+    } else if (square[3].innerText !== "" && square[3].innerText == square[4].innerText && square[3].innerText == square[5].innerText) {
+        if (square[3].innerText == "X") {
+            winner = player1;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         } else {
-            vencedor = player2;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+            winner = player2;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         }
-    } else if (casas[6].innerText !== "-" && casas[6].innerText == casas[7].innerText && casas[6].innerText == casas[8].innerText) {
-        if (casas[6].innerText == "X") {
-            vencedor = player1;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+    } else if (square[6].innerText !== "" && square[6].innerText == square[7].innerText && square[6].innerText == square[8].innerText) {
+        if (square[6].innerText == "X") {
+            winner = player1;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         } else {
-            vencedor = player2;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+            winner = player2;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         }
     }
     // Diagonal:
-    else if (casas[0].innerText !== "-" && casas[0].innerText == casas[4].innerText && casas[0].innerText == casas[8].innerText) {
-        if (casas[0].innerText == "X") {
-            vencedor = player1;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+    else if (square[0].innerText !== "" && square[0].innerText == square[4].innerText && square[0].innerText == square[8].innerText) {
+        if (square[0].innerText == "X") {
+            winner = player1;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         } else {
-            vencedor = player2;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+            winner = player2;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         }
-    } else if (casas[2].innerText !== "-" && casas[2].innerText == casas[4].innerText && casas[2].innerText == casas[6].innerText) {
-        if (casas[2].innerText == "X") {
-            vencedor = player1;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+    } else if (square[2].innerText !== "" && square[2].innerText == square[4].innerText && square[2].innerText == square[6].innerText) {
+        if (square[2].innerText == "X") {
+            winner = player1;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         } else {
-            vencedor = player2;
-            textoVencedor.innerText = vencedor + " venceu!";
-            mudarEstilo();
+            winner = player2;
+            winnerText.innerText = winner + " venceu!";
+            changeStyle();
         }
-    } else if (casas[0].innerText != "-" && casas[1].innerText != "-" && casas[2].innerText != "-" && casas[3].innerText != "-" && casas[4].innerText != "-" && casas[5].innerText != "-" && casas[6].innerText != "-" && casas[7].innerText != "-" && casas[8].innerText != "-") {
-        vencedor = "Deu empate";
-        textoVencedor.innerText = vencedor;
-        mudarEstilo();
+    } else if (square[0].innerText != "" && square[1].innerText != "" && square[2].innerText != "" && square[3].innerText != "" && square[4].innerText != "" && square[5].innerText != "" && square[6].innerText != "" && square[7].innerText != "" && square[8].innerText != "") {
+        winner = "Deu empate";
+        winnerText.innerText = winner;
+        changeStyle();
     }
 }
 // Aplicando os eventos de click:
-casas[0].addEventListener("click", function() {
-    marcar(casas[0]);
-    mostrarVez();
-    verificarVencedor();
+square[0].addEventListener("click", function() {
+    selectSquare(squareText[0]);
+    showCurrentTime();
+    verifyWinner();
 });
-casas[1].addEventListener("click", function() {
-    marcar(casas[1]);
-    mostrarVez();
-    verificarVencedor();
+square[1].addEventListener("click", function() {
+    selectSquare(squareText[1]);
+    showCurrentTime();
+    verifyWinner();
 });
-casas[2].addEventListener("click", function() {
-    marcar(casas[2]);
-    mostrarVez();
-    verificarVencedor();
+square[2].addEventListener("click", function() {
+    selectSquare(squareText[2]);
+    showCurrentTime();
+    verifyWinner();
 });
-casas[3].addEventListener("click", function() {
-    marcar(casas[3]);
-    mostrarVez();
-    verificarVencedor();
+square[3].addEventListener("click", function() {
+    selectSquare(squareText[3]);
+    showCurrentTime();
+    verifyWinner();
 });
-casas[4].addEventListener("click", function() {
-    marcar(casas[4]);
-    mostrarVez();
-    verificarVencedor();
+square[4].addEventListener("click", function() {
+    selectSquare(squareText[4]);
+    showCurrentTime();
+    verifyWinner();
 });
-casas[5].addEventListener("click", function() {
-    marcar(casas[5]);
-    mostrarVez();
-    verificarVencedor();
+square[5].addEventListener("click", function() {
+    selectSquare(squareText[5]);
+    showCurrentTime();
+    verifyWinner();
 });
-casas[6].addEventListener("click", function() {
-    marcar(casas[6]);
-    mostrarVez();
-    verificarVencedor();
+square[6].addEventListener("click", function() {
+    selectSquare(squareText[6]);
+    showCurrentTime();
+    verifyWinner();
 });
-casas[7].addEventListener("click", function() {
-    marcar(casas[7]);
-    mostrarVez();
-    verificarVencedor();
+square[7].addEventListener("click", function() {
+    selectSquare(squareText[7]);
+    showCurrentTime();
+    verifyWinner();
 });
-casas[8].addEventListener("click", function() {
-    marcar(casas[8]);
-    mostrarVez();
-    verificarVencedor();
+square[8].addEventListener("click", function() {
+    selectSquare(squareText[8]);
+    showCurrentTime();
+    verifyWinner();
 });

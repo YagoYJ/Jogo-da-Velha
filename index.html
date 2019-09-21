@@ -13,33 +13,43 @@
     <div class="players" id="players">
         <form action="#" method="post">
             <label for="inputPlayer1">Player 1 ( X ):</label><br>
-            <input type="text" class="campoInput" id="inputPlayer1" name="inputPlayer1" max="30" placeholder="Nome do primeiro jogador" required>
+            <input type="text" class="inputs" id="inputPlayer1" name="inputPlayer1" max="30" placeholder="Nome do primeiro jogador" required>
             <label for="inputPlayer2">Player 2 ( O ):</label><br>
-            <input type="text" class="campoInput" id="inputPlayer2" name="inputPlayer2" max="30" placeholder="Nome do segundo jogador" required>
-            <button type="submit" id="btnValidar">Começar</button>
+            <input type="text" class="inputs" id="inputPlayer2" name="inputPlayer2" max="30" placeholder="Nome do segundo jogador" required>
+            <button type="submit" id="btnSubmit">Começar</button>
         </form>
     </div>
-    <div class="jogo " id="jogo">
-        <div class="informacoes" id="informacoes">
-            <p class="pPlayer vezAtual" id="pPlayer1">Player 1:</p>
+
+    <div class="gameView " id="gameView">
+
+        <div class="sideBar" id="sideBar">
+            <span>Rodada: </span><span id="round">2/3</span><br>
+            <div class="showPlayers">
+                <div class="foto"></div>
+                <p class="pPlayer currentTime" id="pPlayer1"></p>
+            </div>
             <hr>
-            <p class="pPlayer" id="pPlayer2">Player 2:</p>
+            <div class="showPlayers">
+                <div class="foto"></div>
+                <p class="pPlayer" id="pPlayer2"></p>
+            </div>
         </div>
 
         <div class="container" id="container">
-            <div class="casa"><span id="casa0">-</span></div>
-            <div class="casa"><span id="casa1">-</span></div>
-            <div class="casa"><span id="casa2">-</span></div>
-            <div class="casa"><span id="casa3">-</span></div>
-            <div class="casa"><span id="casa4">-</span></div>
-            <div class="casa"><span id="casa5">-</span></div>
-            <div class="casa"><span id="casa6">-</span></div>
-            <div class="casa"><span id="casa7">-</span></div>
-            <div class="casa"><span id="casa8">-</span></div>
+            <div class="square" id="square0"><span id="squareText0"></span></div>
+            <div class="square" id="square1"><span id="squareText1"></span></div>
+            <div class="square" id="square2"><span id="squareText2"></span></div>
+            <div class="square" id="square3"><span id="squareText3"></span></div>
+            <div class="square" id="square4"><span id="squareText4"></span></div>
+            <div class="square" id="square5"><span id="squareText5"></span></div>
+            <div class="square" id="square6"><span id="squareText6"></span></div>
+            <div class="square" id="square7"><span id="squareText7"></span></div>
+            <div class="square" id="square8"><span id="squareText8"></span></div>
         </div>
-        <div class="resultado" id="resultado">
+
+        <div class="result" id="result">
             <h1>Fim de jogo!</h1>
-            <h2 id="textoVencedor"></h2>
+            <h2 id="winnerText"></h2>
 
             <a href="index.html">Jogar novamente</a>
         </div>
