@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>Jogo da Velha - YJ</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="players" id="players">
-        <form action="#" method="post">
-            <label for="inputPlayer1">Player 1 ( X ):</label><br>
-            <input type="text" class="inputs" id="inputPlayer1" name="inputPlayer1" max="30" placeholder="Nome do primeiro jogador" required>
-            <label for="inputPlayer2">Player 2 ( O ):</label><br>
-            <input type="text" class="inputs" id="inputPlayer2" name="inputPlayer2" max="30" placeholder="Nome do segundo jogador" required>
-            <button type="submit" id="btnSubmit">Começar</button>
-        </form>
+      <form action="#" method="post">
+        <h1>JOGADORES</h1>
+        <input
+          type="text"
+          class="inputs"
+          id="inputPlayer1"
+          name="inputPlayer1"
+          max="30"
+          placeholder="Player 1 ( X )"
+          required
+        />
+        <input
+          type="text"
+          class="inputs"
+          id="inputPlayer2"
+          name="inputPlayer2"
+          max="30"
+          placeholder="Player 2 ( O )"
+          required
+        />
+        <button type="submit" id="btnSubmit">Começar</button>
+      </form>
     </div>
 
     <div class="gameView " id="gameView">
-
-        <div class="sideBar" id="sideBar">
-            <span>Rodada: </span><span id="round">2/3</span><br>
-            <div class="showPlayers">
-                <div class="foto"></div>
-                <p class="pPlayer currentTime" id="pPlayer1"></p>
-            </div>
-            <hr>
-            <div class="showPlayers">
-                <div class="foto"></div>
-                <p class="pPlayer" id="pPlayer2"></p>
-            </div>
+      <div class="sideBar" id="sideBar">
+        <div class="showPlayers">
+          <div class="foto"></div>
+          <p class="pPlayer currentTime" id="pPlayer1"></p>
         </div>
-
-        <div class="container" id="container">
-            <div class="square" id="square0"><span id="squareText0"></span></div>
-            <div class="square" id="square1"><span id="squareText1"></span></div>
-            <div class="square" id="square2"><span id="squareText2"></span></div>
-            <div class="square" id="square3"><span id="squareText3"></span></div>
-            <div class="square" id="square4"><span id="squareText4"></span></div>
-            <div class="square" id="square5"><span id="squareText5"></span></div>
-            <div class="square" id="square6"><span id="squareText6"></span></div>
-            <div class="square" id="square7"><span id="squareText7"></span></div>
-            <div class="square" id="square8"><span id="squareText8"></span></div>
+        <hr />
+        <div class="showPlayers">
+          <div class="foto"></div>
+          <p class="pPlayer" id="pPlayer2"></p>
         </div>
+      </div>
 
-        <div class="result" id="result">
-            <h1>Fim de jogo!</h1>
-            <h2 id="winnerText"></h2>
+      <div class="container" id="container">
+        <div class="square" id="square0"><span id="squareText0"></span></div>
+        <div class="square" id="square1"><span id="squareText1"></span></div>
+        <div class="square" id="square2"><span id="squareText2"></span></div>
+        <div class="square" id="square3"><span id="squareText3"></span></div>
+        <div class="square" id="square4"><span id="squareText4"></span></div>
+        <div class="square" id="square5"><span id="squareText5"></span></div>
+        <div class="square" id="square6"><span id="squareText6"></span></div>
+        <div class="square" id="square7"><span id="squareText7"></span></div>
+        <div class="square" id="square8"><span id="squareText8"></span></div>
+      </div>
 
-            <a href="index.html">Jogar novamente</a>
-        </div>
+      <div class="result" id="result">
+        <h1>Fim de jogo!</h1>
+        <h2 id="winnerText"></h2>
+        <button><a href="index.html">Jogar novamente</a></button>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

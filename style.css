@@ -1,244 +1,274 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 
 /* FORMULÁRIO DE JOGADORES */
 
 .players {
-    width: 90%;
-    text-align: center;
-    border: 1px solid #000;
-    border-radius: 8px;
-    margin: 50px auto;
-    padding: 2%;
+  width: 30%;
+  padding: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2d3243;
+  border-radius: 20px;
 }
 
-.players form label {
-    font-size: 15pt;
-    float: left;
-    margin-left: 30px;
+.players form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.players form .inputs,
-.players form button {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 2% auto;
-    padding: 1%;
+.players form h1 {
+  color: #fff;
 }
 
 .players form .inputs {
-    width: 90%;
-    height: 35px;
-    font-size: 18pt;
-    outline: none;
+  width: 100%;
+  height: 60px;
+  font-size: 30px;
+  color: #fff;
+  background-color: #2d3243;
+  border: 1px solid #ff5733;
+  border-radius: 180px;
+  text-align: center;
+  margin: 20px;
+}
+
+.players form .inputs::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.players form .inputs:-moz-placeholder {
+  color: #fff;
+}
+
+.players form .inputs::-moz-placeholder {
+  color: #fff;
+}
+
+.players form .inputs:-ms-input-placeholder {
+  color: #fff;
+}
+
+.players form .inputs:focus {
+  width: 130%;
+  transition: 0.5s;
 }
 
 .players form button {
-    width: 95%;
-    font-size: 12pt;
+  width: 60%;
+  height: 50px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #2d3243;
+  border: 1px solid #ff5733;
+  border-radius: 180px;
 }
 
 .players form button:hover {
-    background: #218838;
-    color: #fff;
-    cursor: pointer;
-    transform: scale(1.02);
-    transition: .4s;
+  cursor: pointer;
+  background-color: #ff5733;
+  color: #2d3243;
+  transition: 0.4s;
 }
-
 
 /* CONTEÚDO DO JOGO */
 
 .gameView {
-    display: none;
-    grid-template-rows: 100vw;
-    grid-template-columns: 20% 80%;
-    grid-template-areas: "informacoes game"
+  display: none;
+  grid-template-rows: 100vw;
+  grid-template-columns: 25% 75%;
+  grid-template-areas: "informacoes game";
+  background-color: #2d3243;
+  position: relative;
 }
-
 
 /*  Informações: */
 
 .gameView .sideBar {
-    width: 100%;
-    font-size: 17pt;
-    color: #fff;
-    background-color: #900c3e;
-    border-top-right-radius: 50px;
-    margin: 0 auto 20px auto;
-    padding: 10px;
-    position: relative;
-    grid-area: informacoes;
+  width: 100%;
+  font-size: 17pt;
+  color: #fff;
+  background-color: #900c3e;
+  border-top-right-radius: 50px;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  position: relative;
+  grid-area: informacoes;
 }
 
 .gameView .sideBar span {
-    font-size: 14pt;
-    float: left;
+  font-size: 14pt;
+  float: left;
 }
 
 .gameView .sideBar #round {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .gameView .sideBar .showPlayers {
-    line-height: 55px;
+  line-height: 55px;
 }
 
 .gameView .sideBar .foto {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #fff;
-    border-radius: 180px;
-    margin: 5px 10px 5px 5px;
-    float: left;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 180px;
+  margin: 5px 10px 5px 5px;
+  float: left;
 }
 
 .gameView .sideBar p {
-    margin: 10px auto;
+  margin: 10px auto;
 }
-
 
 /* Jogo: */
 
 .gameView .container {
-    width: 400px;
-    height: 400px;
-    background-color: #2d3243;
-    border: 6px solid #FF5733;
-    border-radius: 50px;
-    margin: 100px auto 0 auto;
-    display: grid;
-    grid-template-rows: 32.5% 32.5% 32.5%;
-    grid-template-columns: 32.5% 32.5% 32.5%;
-    grid-template-areas: "s0 s1 s2" "s3 s4 s5" "s6 s7 s8";
-    grid-gap: 1px;
-    justify-content: space-between;
-    align-content: space-between;
-    grid-area: game;
-    position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #2d3243;
+  border: 6px solid #ff5733;
+  border-radius: 50px;
+  margin: 100px auto 0 auto;
+  display: grid;
+  grid-template-rows: 32.5% 32.5% 32.5%;
+  grid-template-columns: 32.5% 32.5% 32.5%;
+  grid-template-areas: "s0 s1 s2" "s3 s4 s5" "s6 s7 s8";
+  grid-gap: 1px;
+  justify-content: space-between;
+  align-content: space-between;
+  grid-area: game;
+  position: relative;
 }
 
 .gameView .container .square {
-    border: none;
-    background-color: #900c3f;
-    position: relative;
+  border: none;
+  background-color: #900c3f;
+  position: relative;
 }
 
 .gameView .container .square:hover {
-    background: #68062c;
-    cursor: pointer;
+  background: #68062c;
+  cursor: pointer;
 }
 
 .gameView .container .square span {
-    color: #fff;
-    font-size: 30pt;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 30pt;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #square0 {
-    border-top-left-radius: 43px;
-    grid-area: s0;
+  border-top-left-radius: 43px;
+  grid-area: s0;
 }
 
 #square1 {
-    grid-area: s1;
+  grid-area: s1;
 }
 
 #square2 {
-    border-top-right-radius: 43px;
-    grid-area: s2;
+  border-top-right-radius: 43px;
+  grid-area: s2;
 }
 
 #square3 {
-    grid-area: s3;
+  grid-area: s3;
 }
 
 #square4 {
-    grid-area: s4;
+  grid-area: s4;
 }
 
 #square5 {
-    grid-area: s5;
+  grid-area: s5;
 }
 
 #square6 {
-    border-bottom-left-radius: 43px;
-    grid-area: s6;
+  border-bottom-left-radius: 43px;
+  grid-area: s6;
 }
 
 #square7 {
-    grid-area: s7;
+  grid-area: s7;
 }
 
 #square8 {
-    border-bottom-right-radius: 43px;
-    grid-area: s8;
+  border-bottom-right-radius: 43px;
+  grid-area: s8;
 }
 
 .currentTime {
-    font-size: 25pt;
-    font-weight: bold;
-    transition: .4s;
+  font-size: 25pt;
+  font-weight: bold;
+  transition: 0.4s;
 }
-
 
 /* Mensagem vencedor */
 
 .gameView .result {
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    background-color: rgba(0, 0, 0, .1);
-    float: left;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .gameView .result h1 {
-    font-size: 30pt;
-    margin: 170px auto 20px auto;
+  font-size: 40pt;
+  margin-bottom: 10px;
 }
 
 .gameView .result h2 {
-    display: table;
-    margin: 0 auto;
+  font-size: 20pt;
+  margin-bottom: 20px;
 }
 
-.gameView .result a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 20pt;
-    background: #069;
-    border-radius: 8px;
-    margin: 30px auto;
-    padding: 2%;
-    display: table;
-    opacity: .8;
+.gameView .result button {
+  width: 30%;
+  height: 60px;
+  font-size: 25px;
+  color: #fff;
+  background-color: #2d3243;
+  border: 1px solid #ff5733;
+  border-radius: 180px;
 }
 
-.gameView .result a:hover {
-    opacity: 1;
-    transition: .4s;
+.gameView .result button:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+}
+
+.gameView .result button a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .finalizado {
-    opacity: .2;
+  opacity: 1;
 }
-
 
 /* RESPONSIVIDADE */
 
 @media screen and (max-width: 500px) {
-    .gameView .container {
-        width: 300px;
-        height: 300px;
-    }
+  .gameView .container {
+    width: 300px;
+    height: 300px;
+  }
 }

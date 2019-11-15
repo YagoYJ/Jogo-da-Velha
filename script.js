@@ -66,7 +66,7 @@ var gameView = document.getElementById("gameView");
 var container = document.getElementById("container");
 
 function changeStyle() {
-    result.style.display = "block";
+    result.style.display = "flex";
     gameView.classList.add("finalizado");
     container.classList.add("finalizado");
 }
